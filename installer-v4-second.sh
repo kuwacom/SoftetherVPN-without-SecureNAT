@@ -82,7 +82,7 @@ no-resolv
 no-poll
 
 # Prevent Windows 7 DHCPDISCOVER floods
-dhcp-option=252,\"\n\"
+dhcp-option=252,\"\\n\"
 
 # Use this DNS servers for incoming DNS requests
 server=1.1.1.1
