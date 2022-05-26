@@ -43,14 +43,14 @@ ServerPasswordSet <Your admin password>
 HubDelete DEFAULT
 HubCreate vpn-hub /PASSWORD:<hub password>
 BridgeCreate vpn-hub /DEVICE:vpn /TAP:yes
-Hub vpn
+Hub vpn-hub
 GroupCreate Admin /REALNAME:none /NOTE:none
 UserCreate <user name> /GROUP:Admin /NOTE:none /REALNAME:none
 UserPasswordSet <user name> /password:<user password>
 exit
 "
 /usr/local/vpnserver/vpncmd /server localhost
-
+echo "complete vpnserver setup"
 echo -e "[Unit]
 Description=SoftEther VPN Server
 After=network.target
@@ -127,7 +127,7 @@ no-resolv
 no-poll
 
 # Prevent Windows 7 DHCPDISCOVER floods
-dhcp-option=252,"\n"
+dhcp-option=252,\"\n\"
 
 # Use this DNS servers for incoming DNS requests
 server=1.1.1.1
