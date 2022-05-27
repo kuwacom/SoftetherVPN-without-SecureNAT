@@ -35,6 +35,20 @@ direct bridging without secure nets allows for server2client connections.
   UserPasswordSet <user name> /password:<user password>
   exit
   ```
+  example
+  in this case, `user-name:vpn` `user-pass:vpn`
+  ```bash
+  ServerPasswordSet vpn
+  HubDelete DEFAULT
+  HubCreate vpn-hub /PASSWORD:vpn
+  BridgeCreate vpn-hub /DEVICE:vpn /TAP:yes
+  Hub vpn-hub
+  GroupCreate Admin /REALNAME:none /NOTE:none
+  UserCreate vpn /GROUP:Admin /NOTE:none /REALNAME:none
+  UserPasswordSet vpn /password:vpn
+  exit
+  ```
+
   3. **"installer-v4-second.sh"**<br>
   The second script, "installer-v4-second.sh" is also executed.
   ```bash
