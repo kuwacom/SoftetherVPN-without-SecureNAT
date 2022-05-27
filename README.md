@@ -36,7 +36,10 @@ direct bridging without secure nets allows for server2client connections.
   exit
   ```
   3. **"installer-v4-second.sh"**<br>
-  The second script, "installer-v4-second.sh" is also executed.<br>
+  The second script, "installer-v4-second.sh" is also executed.
+  ```bash
+  bash installer-v4-second.sh
+  ```
   **When all is done, the system will be rebooted*<br>
 
 > use prototype
