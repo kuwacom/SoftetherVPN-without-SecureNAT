@@ -22,6 +22,7 @@ iptables -A FORWARD -s $VPN_SUBNET -m state --state NEW -j ACCEPT
 
 apt update
 apt install nano
+sudo yes | apt install net-tools
 sudo yes | apt install iptables-persistent
 sudo yes | apt install dnsmasq
 apt install make
