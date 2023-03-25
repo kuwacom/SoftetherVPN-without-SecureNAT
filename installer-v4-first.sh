@@ -5,6 +5,13 @@ VPN_SUBNET=192.168.10.0/24
 NET_INTERFACE=eth0
 VPNEXTERNALIP=$(ip -f inet -o addr show "${NET_INTERFACE}" | cut -d\  -f 7 | cut -d/ -f 1)
 
+apt update
+apt install nano
+sudo yes | apt install net-tools
+sudo yes | apt install iptables-persistent
+sudo yes | apt install dnsmasq
+apt install make
+sudo yes | apt install gcc
 
 #iptables setting
 iptables -F && iptables -X
@@ -20,13 +27,7 @@ iptables -A INPUT -s $VPN_SUBNET -m state --state NEW -j ACCEPT
 iptables -A OUTPUT -s $VPN_SUBNET -m state --state NEW -j ACCEPT
 iptables -A FORWARD -s $VPN_SUBNET -m state --state NEW -j ACCEPT
 
-apt update
-apt install nano
-sudo yes | apt install net-tools
-sudo yes | apt install iptables-persistent
-sudo yes | apt install dnsmasq
-apt install make
-sudo yes | apt install gcc
+
 wget https://github.com/SoftEtherVPN/SoftEtherVPN_Stable/releases/download/v4.29-9680-rtm/softether-vpnserver-v4.29-9680-rtm-2019.02.28-linux-x64-64bit.tar.gz
 tar -xzvf softether-vpnserver-v4.29-9680-rtm-2019.02.28-linux-x64-64bit.tar.gz
 cd vpnserver
