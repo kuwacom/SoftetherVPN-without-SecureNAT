@@ -6,7 +6,7 @@ NET_INTERFACE=eth0
 VPNEXTERNALIP=$(ip -f inet -o addr show "${NET_INTERFACE}" | cut -d\  -f 7 | cut -d/ -f 1)
 
 
-echo -e "[Unit]
+echo "[Unit]
 Description=SoftEther VPN Server
 After=network.target
 [Service]
