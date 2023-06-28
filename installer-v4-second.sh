@@ -31,7 +31,7 @@ WantedBy=multi-user.target" > /etc/systemd/system/vpnserver.service
 sudo systemctl daemon-reload
 
 #DHCPsetting
-echo -e "# In this case it is the Softether bridge
+echo "# In this case it is the Softether bridge
 interface=${TAP_INTERFACE}
 
 # Don't ever listen to anything on eth0, you wouldn't want that.
@@ -130,7 +130,7 @@ dhcp-option=3,${TAP_ADDR}" > /etc/dnsmasq.conf
 
 
 #NATsetting
-echo -e "net.core.somaxconn=4096
+echo "net.core.somaxconn=4096
 net.ipv4.ip_forward=1
 net.ipv4.conf.all.send_redirects = 0
 net.ipv4.conf.all.accept_redirects = 1 
